@@ -22,8 +22,6 @@ dl {
 	transform-style: preserve-3d;
 }
 dd {
-	/*border: solid 2px #ccc;*/
-
 	width: 230px;
 	height: 340px;
 	position: absolute;
@@ -31,31 +29,10 @@ dd {
 	left: 0;
 
 }
-
-@keyframes cBorder {
-    0% {
-        border: solid red;
-    }
-    25% {
-        border: solid yellow;
-    }
-    50% {
-    	border: solid blue;
-    }
-    75% {
-    	border: solid green;
-    }
-    100% {
-    	border: solid red;
-    }
-}
-
-
 img {
-	border-radius: 5px;
+	border: solid 6px #fff;
 	width: 100%;
 	height:100%;
-	animation: cBorder 5s infinite linear;
 }
 dt {
 	border-radius: 50%;
@@ -64,17 +41,17 @@ dt {
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	transform: translate(-50%,-50%) rotateX(90deg) translateZ(-200px);
-	background: -moz-radial-gradient(center center,farthest-side,#fff5,#0005);
-	background: -webkit-radial-gradient(center center,farthest-side,#fff5,#0005);
-	background: -o-radial-gradient(center center,farthest-side,#fff5,#0005);
-	background: radial-gradient(center center,farthest-side,#fff5,#0005);
+	transform: translate(-50%,-50%) rotateX(90deg) translateZ(-206px);
+	background: -moz-radial-gradient(center center,farthest-side,#fff5,#0002);
+	background: -webkit-radial-gradient(center center,farthest-side,#fff5,#0002);
+	background: -o-radial-gradient(center center,farthest-side,#fff5,#0002);
+	background: radial-gradient(center center,farthest-side,#fff5,#0002);
 }
 .inverteds {
 	transform: scaleY(-1);
 	position: absolute;
 	left: 0;
-	top: 370px;
+	top: 388px; /*370*/
 	width: 230px;
 	height: 340px;
 	opacity:0.5;
@@ -89,8 +66,8 @@ dt {
 	content: '';
 	display: block;
 	position: absolute;
-	width: 100%;
-	height: 100%;
+	width: 242px;
+	height: 352px;
 	top: 0;
 	left: 0;
 	background: -moz-radial-gradient(bottom, circle farthest-side, #0000, #000 66%);

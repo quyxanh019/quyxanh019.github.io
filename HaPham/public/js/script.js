@@ -30,7 +30,7 @@ window.onload = function () {
 				x %= 360;
 			if (y > 360 || y < -360)
 				y %= 360;
-			dl.style.transform = "rotateX(" + x + "deg) rotateY(" + y + "deg)";
+			dl.style.transform = "rotateX(" + -10 + "deg) rotateY(" + y + "deg)";
 		}
 		window.onmouseup = function () {
 			window.onmousemove = null;
@@ -39,7 +39,7 @@ window.onload = function () {
 
 	function deal(dds, n) {
 		var speed = 350;
-		var translateZTerminus = 400;
+		var translateZTerminus = 460;
 		var angle = 360 / dds.length * n;
 		var translateZ = 0;
 		var rotateY = 0;
