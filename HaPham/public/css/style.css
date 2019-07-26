@@ -22,7 +22,8 @@ dl {
 	transform-style: preserve-3d;
 }
 dd {
-	border: solid 2px #ccc;
+	/*border: solid 2px #ccc;*/
+
 	width: 230px;
 	height: 340px;
 	position: absolute;
@@ -30,9 +31,31 @@ dd {
 	left: 0;
 
 }
+
+@keyframes cBorder {
+    0% {
+        border: solid red;
+    }
+    25% {
+        border: solid yellow;
+    }
+    50% {
+    	border: solid blue;
+    }
+    75% {
+    	border: solid green;
+    }
+    100% {
+    	border: solid red;
+    }
+}
+
+
 img {
+	border-radius: 5px;
 	width: 100%;
 	height:100%;
+	animation: cBorder 5s infinite linear;
 }
 dt {
 	border-radius: 50%;
