@@ -42,9 +42,9 @@ img {
 	height:100%;
 }
 dt {
-	/*border-radius: 50%;*/
-	width: 810px;
-	height: 810px;
+	border-radius: 50%;
+	width: 830px;
+	height: 830px;
 	position: absolute;
 	top: 50%;
 	left: 50%;
