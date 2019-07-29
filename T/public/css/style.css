@@ -1,3 +1,9 @@
+:root {
+    --widthImage: 255px;
+	--heightImage: 340px; 
+}
+
+
 @charset "utf-8";
 * {
 	margin: 0;
@@ -10,20 +16,21 @@
 	user-select: none;
 }
 body{
-	background:#000;
+	background: #000;
 	overflow: hidden;
+	 
 }
 dl {
-	width: 230px;
-	height: 340px;
+	width: var(--widthImage);
+	height: var(--heightImage);
 	position: relative;
 	margin: 150px auto 0;
 	-webkit-transform-style: -webkit-preserve-3d;
 	transform-style: preserve-3d;
 }
 dd {
-	width: 230px;
-	height: 340px;
+	width: var(--widthImage);
+	height: var(--heightImage);
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -35,43 +42,43 @@ img {
 	height:100%;
 }
 dt {
-	border-radius: 50%;
+	/*border-radius: 50%;*/
 	width: 810px;
 	height: 810px;
 	position: absolute;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%,-50%) rotateX(90deg) translateZ(-206px);
-	background: -moz-radial-gradient(center center,farthest-side,#fff5,#0002);
-	background: -webkit-radial-gradient(center center,farthest-side,#fff5,#0002);
-	background: -o-radial-gradient(center center,farthest-side,#fff5,#0002);
-	background: radial-gradient(center center,farthest-side,#fff5,#0002);
+	background: -moz-radial-gradient(center center, farthest-side, #fff5, #0005);
+	background: -webkit-radial-gradient(center center, farthest-side, #fff5, #0005);
+	background: -o-radial-gradient(center center, farthest-side, #fff5, #0005);
+	background: radial-gradient(center center, farthest-side, #fff5, #0005);
 }
 .inverteds {
 	transform: scaleY(-1);
 	position: absolute;
 	left: 0;
 	top: 388px; /*370*/
-	width: 230px;
-	height: 340px;
-	opacity:0.5;
+	width: var(--widthImage);
+	height: var(--heightImage);
+	opacity:0.3;
 }
 .inverted {
 	position: relative;
-	width: 230px;
-	height: 340px;
+	width: var(--widthImage);
+	height: var(--heightImage);
 
 }
 .inverted::before {
 	content: '';
 	display: block;
 	position: absolute;
-	width: 242px;
+	width: 271px;
 	height: 352px;
 	top: 0;
 	left: 0;
 	background: -moz-radial-gradient(bottom, circle farthest-side, #0000, #000 66%);
-	background: -webkit-radial-gradient(bottom, circle farthest-side, #0000, #000 66%);
+	background: -webkit-radial-gradient(bottom, circle farthest-side, #0000, #000 60%);
 	background: -o-radial-gradient(bottom, circle farthest-side, #0000, #000 66%);
 	background: radial-gradient(bottom, circle farthest-side, #0000, #000 66%);
 }

@@ -30,7 +30,11 @@ window.onload = function () {
 				x %= 360;
 			if (y > 360 || y < -360)
 				y %= 360;
-			dl.style.transform = "rotateX(" + -10 + "deg) rotateY(" + y + "deg)";
+			if (x > -5)
+				x = -5;
+			if (x < -90)
+				x = -90
+			dl.style.transform = "rotateX(" + x + "deg) rotateY(" + y + "deg)";
 		}
 		window.onmouseup = function () {
 			window.onmousemove = null;
