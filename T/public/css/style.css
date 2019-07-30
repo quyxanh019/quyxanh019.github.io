@@ -9,16 +9,15 @@
 	margin: 0;
 	padding: 0;
 	pointer-events: none;
-	-webkit-user-select: none;
+	-webkit-user-select: auto;
 	-moz-user-select: none;
 	-o-user-select: none;
 	-ms-user-select: none;
-	user-select: none;
+	user-select: auto;
 }
 body{
 	background: #000;
 	overflow: hidden;
-	 
 }
 dl {
 	width: var(--widthImage);
@@ -43,8 +42,8 @@ img {
 }
 dt {
 	border-radius: 50%;
-	width: 830px;
-	height: 830px;
+	width: 900px;
+	height: 900px;
 	position: absolute;
 	top: 50%;
 	left: 50%;
