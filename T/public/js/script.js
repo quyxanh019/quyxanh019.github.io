@@ -34,10 +34,10 @@ window.onload = function () {
 				x %= 360;
 			if (y > 360 || y < -360)
 				y %= 360;
-			if (x > -5)
-				x = -5;
-			if (x < -90)
-				x = -90;
+			// if (x > -5)
+			// 	x = -5;
+			// if (x < -90)
+			// 	x = -90;
 			dl.style.transform = "rotateX(" + x + "deg) rotateY(" + y + "deg)";
 		}
 		window.onmouseup = function () {
