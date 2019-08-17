@@ -1,5 +1,8 @@
+@import url(https://fonts.googleapis.com/css?family=Merriweather:300,300i,400,400i,700,700i,900,900i);
+@import url(https://fonts.googleapis.com/css?family=Acme:400);
+@import url(https://fonts.googleapis.com/css?family=Caveat+Brush:400);
 @import url(https://fonts.googleapis.com/css?family=Rubik:300,300i,400,400i,500,500i,700,700i,900,900i);
-@import url(https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i);
+@import url(https://fonts.googleapis.com/css?family=Permanent+Marker:400);
 
 
 
@@ -21,28 +24,28 @@ body {
   line-height: 1.6;
 }
 .display-1 {
-  font-family: 'Rubik', sans-serif;
+  font-family: 'Merriweather', serif;
   font-size: 4.25rem;
 }
 .display-1 > .mbr-iconfont {
   font-size: 6.8rem;
 }
 .display-2 {
-  font-family: 'Rubik', sans-serif;
+  font-family: 'Acme', sans-serif;
   font-size: 3rem;
 }
 .display-2 > .mbr-iconfont {
   font-size: 4.8rem;
 }
 .display-4 {
-  font-family: 'Roboto', sans-serif;
-  font-size: 1.4rem;
+  font-family: 'Permanent Marker', handwriting;
+  font-size: 1.2rem;
 }
 .display-4 > .mbr-iconfont {
-  font-size: 2.24rem;
+  font-size: 1.92rem;
 }
 .display-5 {
-  font-family: 'Rubik', sans-serif;
+  font-family: 'Caveat Brush', handwriting;
   font-size: 1.5rem;
 }
 .display-5 > .mbr-iconfont {
@@ -72,9 +75,9 @@ body {
     line-height: calc( 1.4 * (1.7rem + (3 - 1.7) * ((100vw - 20rem) / (48 - 20))));
   }
   .display-4 {
-    font-size: 1.12rem;
-    font-size: calc( 1.14rem + (1.4 - 1.14) * ((100vw - 20rem) / (48 - 20)));
-    line-height: calc( 1.4 * (1.14rem + (1.4 - 1.14) * ((100vw - 20rem) / (48 - 20))));
+    font-size: 0.96rem;
+    font-size: calc( 1.07rem + (1.2 - 1.07) * ((100vw - 20rem) / (48 - 20)));
+    line-height: calc( 1.4 * (1.07rem + (1.2 - 1.07) * ((100vw - 20rem) / (48 - 20))));
   }
   .display-5 {
     font-size: 1.2rem;
@@ -1417,9 +1420,20 @@ body {
 .cid-ryWAqdw8HM {
   background-image: url("../../../assets/images/mbr-1920x1337.jpg");
 }
+.cid-ryWAqdw8HM .mbr-text,
+.cid-ryWAqdw8HM .mbr-section-btn {
+  text-align: center;
+  color: #ffffff;
+}
+.cid-ryWAqdw8HM H3 {
+  color: #f9f295;
+}
+.cid-ryWAqdw8HM H1 {
+  color: #f9e905;
+}
 .cid-ryWLfIDj5Q {
-  padding-top: 90px;
-  padding-bottom: 90px;
+  padding-top: 75px;
+  padding-bottom: 15px;
   background-color: #ffffff;
 }
 .cid-ryWLfIDj5Q .mbr-section-subtitle {
@@ -1458,8 +1472,8 @@ body {
   background: #efefef;
 }
 .cid-ryWLmBMfoY {
-  padding-top: 30px;
-  padding-bottom: 30px;
+  padding-top: 15px;
+  padding-bottom: 15px;
   background-color: #2e2e2e;
 }
 .cid-ryWLmBMfoY .row-links {
