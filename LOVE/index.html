@@ -1,25 +1,9 @@
 <!DOCTYPE html>
-<html lang="">
+<html>
 <head>
     <meta charset="utf-8">
+    <title>title</title>
 
-    <meta name="description" content="Love is when the other person's happiness is more important than your own.">
-    <meta name="author" content="Juno_okyo">
-    <meta name="copyright" content="J2TEAM">
-    <meta name="robots" content="index, follow">
-
-    <meta property="og:title" content="Say I Love You">
-    <meta property="og:description"
-          content="Love is when the other person's happiness is more important than your own.">
-    <meta property="og:url" content="https://code.junookyo.xyz/love/index.html">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="https://i.imgur.com/36GsFBT.jpg">
-    <meta property="og:site_name" content="Say I Love You">
-    <meta property="og:locale" content="vi_VN">
-
-    <title>Say I Love You</title>
-
-    <link rel="canonical" href="https://code.junookyo.xyz/love/index.html">
     <link rel="shortcut icon" href="https://junookyo.blogspot.com/favicon.ico" type="image/x-icon">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mini.css/2.3.5/mini-dark.min.css">
@@ -31,7 +15,10 @@
         /* EDIT HERE */
         var CONFIG = {
             background: 'https://i.imgur.com/36GsFBT.jpg',
-            content: [],
+            content: [{
+                    text: ' –  hehhe!\n',
+                    delay: 2000
+                }],
             //     [{
             //     text: ' – Gửi Lan Bé Nhỏ!\n',
             //     delay: 2000
@@ -73,6 +60,27 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script src="https://unpkg.com/sweetalert@2.0.8/dist/sweetalert.min.js"></script>
 <script src="js/juno_okyo.min.js"></script>
+
+<!--<script>-->
+<!--    function randomInt(min, max) {-->
+<!--        min = Math.ceil(min)-->
+<!--        max = Math.floor(max)-->
+<!--        return Math.floor(Math.random() * (max - min) + min)-->
+<!--    }-->
+
+<!--    jQuery(document).ready(function ($) {-->
+<!--        const $btn = $('#btn-no')-->
+
+<!--        $btn.on('mouseenter', function () {-->
+<!--            $btn.css({-->
+<!--                position: 'fixed',-->
+<!--                top: randomInt(5, window.innerHeight - 50),-->
+<!--                left: randomInt(5, window.innerWidth - 140)-->
+<!--            });-->
+<!--        })-->
+<!--    });-->
+<!--</script>-->
+
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-45794712-25"></script>
 <script>
     window.dataLayer = window.dataLayer || [];
@@ -87,9 +95,16 @@
 
 <!-- BACKGROUND MUSIC -->
 <!--<iframe src="https://www.nhaccuatui.com/mh/background/eZqJdBiX1raA"  width="1" height="1" allowfullscreen></iframe>-->
-<embed src="public/studio/silence.mp3" type="audio/mpeg" autostart="true" hidden="true">
-<audio autoplay loop>
+<!--<iframe src="public/studio/silence.mp3" allow="autoplay" id="audio" style="display: none"></iframe>-->
+<!--<embed src="public/studio/silence.mp3" type="audio/mpeg" autostart="true" hidden="true">-->
+<audio id="audio2" autoplay loop>
     <source src="public/studio/goodtime.mp3" type="audio/mpeg">
 </audio>
+<script type="text/javascript">
+    function autoplay(){
+            document.getElementById("audio2").play();
+    }
+</script>
+<script>autoplay();</script>
 </body>
 </html>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="97ab35d1-58cc-4885-a644-a74d3cc1206f" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/LOVE/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LOVE/.idea/LOVE.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LOVE/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LOVE/.idea/jsLibraryMappings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LOVE/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LOVE/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LOVE/.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LOVE/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LOVE/README.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LOVE/css/juno_okyo.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LOVE/css/overlays/01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LOVE/css/overlays/02.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LOVE/css/overlays/03.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LOVE/css/overlays/04.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LOVE/css/overlays/05.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LOVE/css/overlays/06.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LOVE/css/overlays/07.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LOVE/css/overlays/08.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LOVE/css/overlays/09.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LOVE/css/vegas.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LOVE/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LOVE/js/juno_okyo.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LOVE/public/studio/1.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LOVE/public/studio/goodtime.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LOVE/public/studio/silence.mp3" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="26y24whqyRQDpIVvQm69wFTisp8" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="dart.analysis.tool.window.visible" value="false" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="97ab35d1-58cc-4885-a644-a74d3cc1206f" name="Changes" comment="" />
+      <created>1648381328189</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1648381328189</updated>
+      <workItem from="1648381330823" duration="19000" />
+    </task>
+    <servers />
+  </component>
+</project>
