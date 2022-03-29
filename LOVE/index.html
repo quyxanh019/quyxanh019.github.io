@@ -14,28 +14,49 @@
     <script>
         /* EDIT HERE */
         const CONFIG = {
-            background: 'https://i.imgur.com/36GsFBT.jpg',
+            // background: 'https://i.imgur.com/36GsFBT.jpg',
+            background: 'https://cdn.pixabay.com/photo/2017/09/03/17/26/woman-2711279_960_720.jpg',
             content:
                 [{
-                    text: ' – Gửi Lan Bé Nhỏ!\n',
+                    text: ' – Lan Bé Nhỏ yêu quý!\n',
                     delay: 2000
                 }, {
-                    text: ' – Có thể bạn cũng biết là...',
+                    text: ' – Chắc bạn cũng biết là...',
                     delay: 1500
                 }, {
-                    text: ' tôi có tình cảm với bạn? :x',
-                    delay: 700
+                    text: ' mình thích bạn? :x\n',
+                    delay: 2000
                 },
                     {
-                        text: ' tôi có tình cảm với bạn? :x',
-                        delay: 700
-                    }
+                        text: '- Thực ra mình đã thích bạn từ rất rất lâu rồi.\n',
+                        delay: 2000
+                    },
+                    {
+                        text: '- Nhiều lần mình đã muốn từ bỏ',
+                        delay: 2000
+                    },
+                    {
+                        text: ' nhưng mình không làm được.\n',
+                        delay: 5000
+                    },
+                    {
+                        text: '- Mình lấy hết can đảm ra để nói với bạn là...\n',
+                        delay: 3000
+                    },
+                    {
+                        text: '  MÌNH THÍCH BẠN RẤT NHIỀU.\n',
+                        delay: 2000
+                    },
+                    {
+                        text: '- Cuối tuần bạn dẫn mình đi khám phá Hà Nội nhé!',
+                        delay: 2000
+                    },
                 ],
             alert: {
                 troll: true, // Chỉ cho nhấn Đồng ý
                 success: {
                     title: 'Tuyệt vời!',
-                    message: 'Đó là câu trả lời mà anh mong đợi!'
+                    message: 'Thêm một bất ngờ nữa nè!'
                 },
                 error: {
                     title: 'Thật tiếc!',
@@ -48,11 +69,11 @@
 <body>
 <div class="container">
     <div class="row">
-        <div class="col-sm col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3 row">
+        <div class="col-sm col-md-8 col-md-offset-2 col-lg-9 row">
             <p id="txt"></p>
         </div>
     </div>
-    <div class="col-sm col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-5 row">
+    <div class="col-sm col-md-8 col-md-offset-2 col-lg-9 col-lg-offset-5 row">
         <div id="buttons" style="display: none;">
             <button type="button" class="primary large" id="btn-yes">Đồng ý</button>
             <button type="button" class="large" id="btn-no">Không đồng ý</button>

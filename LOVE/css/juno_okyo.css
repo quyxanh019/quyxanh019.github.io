@@ -6,9 +6,9 @@ body {
 
 #txt span {
     font-family: 'Dancing Script', cursive !important;
-    font-size: 50px;
+    font-size: 43px;
     color: #fff;
-    text-shadow: 1px 1px 1px #000, 3px 3px 5px blue;
+    text-shadow: 1px 1px 1px #000, 3px 3px 5px #0d0d0d;
     user-select: none
 }
 
