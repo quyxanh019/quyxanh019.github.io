@@ -1,12 +1,12 @@
 
 window.onload = function () {
-	var dds = document.getElementsByTagName('dd');
-	var dl = document.getElementsByTagName('dl')[0];
+	const dds = document.getElementsByTagName('dd');
+	const dl = document.getElementsByTagName('dl')[0];
 	dl.style.transform = "rotateX(-10deg) rotateY(0deg)";
-	for (var i = 0; i < dds.length; i++) {
-		var inverted = document.createElement('div');
-		var inverteds = document.createElement('div');
-		var img = document.createElement('img');
+	for (let i = 0; i < dds.length; i++) {
+		const inverted = document.createElement('div');
+		const inverteds = document.createElement('div');
+		const img = document.createElement('img');
 		img.src = dds[i].getElementsByTagName('img')[0].src;
 		inverted.appendChild(img);
 		inverted.className = 'inverted';
@@ -20,16 +20,16 @@ window.onload = function () {
 
 	window.onmousedown = function (e) {
 		e = e || window.event;
-		var mouseX = e.clientX, mouseY = e.clientY;
-		var transform = dl.style.transform;
-		var rotateX = transform.substr(transform.indexOf('rotateX(') + 8);
-		var rotateY = transform.substr(transform.indexOf('rotateY(') + 8);
+		const mouseX = e.clientX, mouseY = e.clientY;
+		const transform = dl.style.transform;
+		let rotateX = transform.substr(transform.indexOf('rotateX(') + 8);
+		let rotateY = transform.substr(transform.indexOf('rotateY(') + 8);
 		rotateX = parseInt(rotateX.substring(0, rotateX.indexOf('deg')));
 		rotateY = parseInt(rotateY.substring(0, rotateY.indexOf('deg')));
 		window.onmousemove = function (e) {
 			e = e || window.event;
-			var x = rotateX - (e.clientY - mouseY);
-			var y = rotateY + (e.clientX - mouseX);
+			let x = rotateX - (e.clientY - mouseY);
+			let y = rotateY + (e.clientX - mouseX);
 			if (x > 360 || x < -360)
 				x %= 360;
 			if (y > 360 || y < -360)
@@ -46,12 +46,12 @@ window.onload = function () {
 	}
 
 	function deal(dds, n) {
-		var speed = 350;
-		var translateZTerminus = 460;
-		var angle = 360 / dds.length * n;
-		var translateZ = 0;
-		var rotateY = 0;
-		var time = setInterval(function () {
+		const speed = 350;
+		const translateZTerminus = 460;
+		const angle = 360 / dds.length * n;
+		let translateZ = 0;
+		let rotateY = 0;
+		const time = setInterval(function () {
 			translateZ += translateZTerminus / speed * 10;
 			rotateY += angle / speed * 10;
 			dds[n].style.transform = 'rotateY(' + rotateY + 'deg) translateZ(' + translateZ + 'px)';
