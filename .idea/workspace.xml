@@ -5,28 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="97ab35d1-58cc-4885-a644-a74d3cc1206f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/nameless/public/images/1.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nameless/public/images/10.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nameless/public/images/2.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nameless/public/images/3.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nameless/public/images/4.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nameless/public/images/5.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nameless/public/images/6.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nameless/public/images/7.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nameless/public/images/8.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nameless/public/images/9.jpeg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TNT/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/nameless/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TNT/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/nameless/public/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TNT/public/images/TNT.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TNT/public/images/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/nameless/public/images/favicon.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TNT/public/images/laugh.png" beforeDir="false" afterPath="$PROJECT_DIR$/nameless/public/images/laugh.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TNT/public/images/microphone.png" beforeDir="false" afterPath="$PROJECT_DIR$/nameless/public/images/microphone.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TNT/public/js/jquery-3.3.1.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/nameless/public/js/jquery-3.3.1.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TNT/public/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/nameless/public/js/script.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TNT/public/studio/NhungNgayDiLac_LinhCao.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/nameless/public/studio/NhungNgayDiLac_LinhCao.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TNT/public/studio/silence.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/nameless/public/studio/silence.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,9 +18,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 4
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="26y24whqyRQDpIVvQm69wFTisp8" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -54,6 +33,7 @@
     "JavaScript Debug.index.html.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/hoang/quyxanh019/quyxanh019.github.io",
@@ -70,6 +50,14 @@
       <recent name="$PROJECT_DIR$/TNT/public/images" />
     </key>
   </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-fdfe4dae3a2d-intellij.indexing.shared.core-IU-243.22562.218" />
+        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-IU-243.22562.218" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -82,7 +70,8 @@
       <workItem from="1648476657366" duration="1176000" />
       <workItem from="1648477883370" duration="12000" />
       <workItem from="1648523037690" duration="5709000" />
-      <workItem from="1715352619788" duration="2070000" />
+      <workItem from="1715352619788" duration="2743000" />
+      <workItem from="1741377764771" duration="1135000" />
     </task>
     <servers />
   </component>
