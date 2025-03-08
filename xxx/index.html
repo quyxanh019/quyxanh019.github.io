@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chúc Mừng 8/3</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #ffe6e6;
+      overflow: hidden;
+      position: relative;
+    }
+    h1 {
+      font-size: 50px;
+      color: #ff3399;
+      opacity: 0;
+      animation: fadeIn 3s forwards, colorChange 5s infinite alternate;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes colorChange {
+      from { color: #ff3399; }
+      to { color: #ff6600; }
+    }
+    .button {
+      padding: 10px 20px;
+      font-size: 20px;
+      color: white;
+      background-color: #ff6699;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      margin-top: 20px;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+      position: relative;
+      z-index: 10;
+    }
+    .button:hover {
+      transform: scale(1.1);
+      background-color: #ff3366;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-top: 15vh;
+      position: relative;
+    }
+    .big-flower {
+      font-size: 200px;
+      opacity: 0;
+      transition: transform 0.5s ease, opacity 0.5s ease;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .message {
+      font-size: 24px;
+      color: #d63384;
+      font-weight: bold;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      margin-bottom: 10px;
+    }
+    .flower {
+      position: absolute;
+      top: -50px;
+      font-size: 30px;
+      color: pink;
+      animation: fall linear infinite;
+    }
+    @keyframes fall {
+      from { transform: translateY(0); opacity: 1; }
+      to { transform: translateY(100vh); opacity: 0; }
+    }
+    .show {
+      opacity: 1;
+    }
+    @media (max-width: 768px) {
+      h1 { font-size: 36px; }
+      .button { font-size: 16px; padding: 8px 16px; margin-top: 20px; }
+      .big-flower { font-size: 120px; }
+      .message { font-size: 18px; margin-bottom: 5px; }
+    }
+  </style>
+</head>
+<body>
+<h1>Chúc Mừng Ngày 8/3!</h1>
+<button class="button">Nhận Lời Chúc</button>
+<div class="container">
+  <div class="big-flower">
+    <div class="message">Chúc bạn có một ngày 8/3 tràn đầy niềm vui và hạnh phúc!</div>
+    <div class="flower-icon">💐</div>
+  </div>
+</div>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const messages = [
+      "Chúc bạn một ngày 8/3 rực rỡ như những bông hoa! 🌸",
+      "Chúc bạn luôn vui vẻ, hạnh phúc và tràn đầy yêu thương! 💖",
+      "Gửi đến bạn những lời chúc tốt đẹp nhất nhân ngày 8/3! 🌷",
+      "Chúc bạn có một ngày thật đặc biệt và đáng nhớ! 🎉",
+      "Mong bạn luôn mạnh mẽ, xinh đẹp và thành công! 🌟"
+    ];
+
+    const flowers = ["💐", "🌹", "🌷", "🌺", "🌻"];
+
+    document.querySelector(".button").addEventListener("click", function () {
+      const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+      const randomFlower = flowers[Math.floor(Math.random() * flowers.length)];
+
+      document.querySelector(".message").textContent = randomMessage;
+      document.querySelector(".flower-icon").textContent = randomFlower;
+
+      document.querySelector(".big-flower").classList.add("show");
+      document.querySelector(".message").classList.add("show");
+
+      setTimeout(() => {
+        document.querySelector(".big-flower").classList.remove("show");
+        document.querySelector(".message").classList.remove("show");
+      }, 3800);
+    });
+
+    function createFlower() {
+      let flower = document.createElement("div");
+      flower.innerHTML = "🌸";
+      flower.classList.add("flower");
+      flower.style.left = Math.random() * window.innerWidth + "px";
+      flower.style.animationDuration = (Math.random() * 3 + 2) + "s";
+      document.body.appendChild(flower);
+      setTimeout(() => flower.remove(), 5000);
+    }
+    setInterval(createFlower, 300);
+  });
+</script>
+</body>
+</html>
