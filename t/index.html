@@ -1,0 +1,439 @@
+<!doctype html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Chúc mừng sinh nhật!</title>
+    <style>
+        :root {
+            --bg1: #ff9a9e;
+            --bg2: #fad0c4;
+            --card: #ffffffcc;
+            --accent: #ff6f91;
+            --glass: rgba(255, 255, 255, 0.15);
+            --shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+            --radius: 18px;
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html, body {
+            height: 100%
+        }
+
+        body {
+            margin: 0;
+            background: linear-gradient(135deg, var(--bg1), var(--bg2));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            color: #222;
+        }
+
+        .stage {
+            width: min(980px, 96%);
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.06));
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(6px);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 36px;
+            letter-spacing: 0.6px;
+            color: #222;
+            text-shadow: 0 2px 6px rgba(255, 255, 255, 0.6)
+        }
+
+        p.lead {
+            margin: 10px 0 0;
+            color: #333;
+            opacity: 0.9;
+            font-size: 20px
+        }
+
+        .controls {
+            margin-top: 20px;
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            justify-content: center
+        }
+
+        .btn {
+            background: var(--card);
+            border: none;
+            padding: 12px 18px;
+            border-radius: 14px;
+            cursor: pointer;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+            font-weight: 600;
+            font-size: 16px;
+            color: #333
+        }
+
+        .btn.primary {
+            background: linear-gradient(90deg, #ff9aa8, #ff6f91);
+            color: white
+        }
+
+        main {
+            display: flex;
+            justify-content: center
+        }
+
+        .card {
+            background: var(--glass);
+            padding: 32px 24px;
+            border-radius: 16px;
+            max-width: 620px;
+            text-align: center;
+            position: relative;
+            overflow: hidden
+        }
+
+        .message {
+            font-size: 20px;
+            color: #222;
+            line-height: 1.6;
+            margin-bottom: 20px
+        }
+
+        .big {
+            font-size: 40px;
+            font-weight: 800;
+            margin: 14px 0;
+            color: #111
+        }
+
+        .balloons {
+            position: absolute;
+            left: -80px;
+            top: 0;
+            width: 300px;
+            height: 340px;
+            pointer-events: none
+        }
+
+        .balloon {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.95
+        }
+
+        @keyframes floaty {
+            0% {
+                transform: translateY(0)
+            }
+            50% {
+                transform: translateY(-18px)
+            }
+            100% {
+                transform: translateY(0)
+            }
+        }
+
+        .balloon {
+            animation: floaty 4s ease-in-out infinite
+        }
+
+        .b1 {
+            width: 82px;
+            height: 110px;
+            background: linear-gradient(180deg, #ffd1dc, #ff9aa8);
+            left: 16px;
+            top: 30px
+        }
+
+        .b2 {
+            width: 62px;
+            height: 86px;
+            background: linear-gradient(180deg, #c9f0ff, #9be7ff);
+            left: 60px;
+            top: 120px;
+            animation-duration: 5s
+        }
+
+        .b3 {
+            width: 46px;
+            height: 68px;
+            background: linear-gradient(180deg, #fff1b6, #ffd86b);
+            left: 6px;
+            top: 200px;
+            animation-duration: 4.2s
+        }
+
+        canvas#confetti {
+            position: absolute;
+            inset: 0;
+            pointer-events: none
+        }
+
+        .gift-area {
+            display: flex;
+            gap: 14px;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px
+        }
+
+        .gift {
+            width: 220px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .gift:hover {
+            transform: scale(1.08)
+        }
+
+        .gift img {
+            width: 100%;
+            display: block
+        }
+
+        .hidden-message {
+            display: none;
+            margin-top: 20px;
+            font-size: 22px;
+            color: #222;
+            animation: fadeIn 1s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px)
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0)
+            }
+        }
+
+        footer {
+            margin-top: 30px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            color: #333;
+            opacity: 0.9;
+            font-size: 14px;
+            text-align: right
+        }
+
+        .heart {
+            position: absolute;
+            color: #ff6f91;
+            font-size: 18px;
+            animation: fly 6s linear infinite;
+            opacity: 0.8;
+        }
+
+        @keyframes fly {
+            0% {
+                transform: translateY(100%) scale(0.8);
+                opacity: 0.8
+            }
+            100% {
+                transform: translateY(-600%) scale(1.4);
+                opacity: 0
+            }
+        }
+
+        .star, .flower, .spark {
+            position: absolute;
+            font-size: 18px;
+            opacity: 0.8;
+            animation: floatUp 8s linear infinite;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0) scale(0.8);
+                opacity: 0.9
+            }
+            100% {
+                transform: translateY(-700%) scale(1.4);
+                opacity: 0
+            }
+        }
+
+        @media (max-width: 720px) {
+            .balloons {
+                display: none
+            }
+
+            .card {
+                padding: 20px
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="stage" role="main" aria-labelledby="title" id="stage">
+    <canvas id="confetti"></canvas>
+    <div class="balloons" aria-hidden="true">
+        <div class="balloon b1"></div>
+        <div class="balloon b2"></div>
+        <div class="balloon b3"></div>
+    </div>
+
+    <header>
+        <h1 id="title">🎂 Chúc mừng sinh nhật, <span id="name">bạn Trang thân yêu</span> 🎉</h1>
+        <p class="lead">Mong mọi điều tốt đẹp và nụ cười luôn rạng rỡ.</p>
+        <div class="controls">
+            <button class="btn primary" id="openGift">Mở quà</button>
+            <button class="btn" id="toggleMusic">▶ Bật nhạc</button>
+        </div>
+    </header>
+
+    <main>
+        <div class="card">
+            <div class="message">
+                <div class="big" id="headline">Mừng sinh nhật lần thứ <span id="age">16</span>!</div>
+                <div id="text">Tuổi 16 lần thứ n luôn hạnh phúc, xinh đẹp và đạt được mọi điều mong ước.<br/><br/>Hãy
+                    tận hưởng ngày đặc biệt này với thật nhiều niềm vui và bất ngờ dễ thương! 💖
+                </div>
+            </div>
+            <div class="gift-area" id="giftCard">
+                <div class="gift" id="giftBox" aria-pressed="false">
+                    <img src="resource/gift-blue.png" alt="Gift box" id="giftImage"/>
+                </div>
+            </div>
+            <div class="hidden-message" id="hiddenMsg">💌 Tặng em chiếc bánh trung thu đặc biệt: nhân ba dễ thương, nhân
+                bốn xinh đẹp, nhân năm giàu có, nhân sáu bình an! 🌸
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div>Made with ❤️ - quyxanh019.</div>
+    </footer>
+</div>
+
+<audio id="bgm" loop autoplay>
+    <source src="resource/hpbd.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+    const canvas = document.getElementById('confetti');
+    const ctx = canvas.getContext('2d');
+    let W, H, particles = [];
+
+    function resize() {
+        W = canvas.width = window.innerWidth;
+        H = canvas.height = window.innerHeight
+    }
+
+    window.addEventListener('resize', resize);
+    resize();
+
+    function rand(min, max) {
+        return Math.random() * (max - min) + min
+    }
+
+    function makeParticle() {
+        return {
+            x: rand(0, W), y: -10,
+            vx: rand(-1.5, 1.5), vy: rand(1, 4),
+            r: Math.floor(rand(5, 10)),
+            color: ['#ffd1dc', '#ff9aa8', '#c9f0ff', '#fff1b6', '#b6ffde'][Math.floor(Math.random() * 5)],
+            rot: rand(0, Math.PI * 2), vr: rand(-0.08, 0.08)
+        }
+    }
+
+    function update() {
+        if (particles.length < 120 && Math.random() < 0.6) particles.push(makeParticle());
+        ctx.clearRect(0, 0, W, H);
+        for (let i = particles.length - 1; i >= 0; i--) {
+            const p = particles[i];
+            p.x += p.vx;
+            p.y += p.vy;
+            p.vy += 0.03;
+            p.rot += p.vr;
+            ctx.save();
+            ctx.translate(p.x, p.y);
+            ctx.rotate(p.rot);
+            ctx.fillStyle = p.color;
+            ctx.fillRect(-p.r / 2, -p.r / 2, p.r, p.r * 1.6);
+            ctx.restore();
+            if (p.y > H + 30 || p.x < -50 || p.x > W + 50) particles.splice(i, 1);
+        }
+        requestAnimationFrame(update);
+    }
+
+    update();
+
+    const giftBtn = document.getElementById('openGift');
+    const giftBox = document.getElementById('giftBox');
+    const hiddenMsg = document.getElementById('hiddenMsg');
+    const giftImage = document.getElementById('giftImage');
+
+    function openGift() {
+        giftImage.src = "resource/gift-blue-open.png";
+        hiddenMsg.style.display = 'block';
+        for (let i = 0; i < 60; i++) particles.push(makeParticle());
+    }
+
+    giftBtn.addEventListener('click', openGift);
+    giftBox.addEventListener('click', openGift);
+
+    const bgm = document.getElementById('bgm');
+    const tgl = document.getElementById('toggleMusic');
+    tgl.addEventListener('click', () => {
+        if (bgm.paused) {
+            bgm.play();
+            tgl.textContent = '⏸ Tắt nhạc'
+        } else {
+            bgm.pause();
+            tgl.textContent = '▶ Bật nhạc'
+        }
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') openGift();
+    });
+
+    function createHeart() {
+        const heart = document.createElement('div');
+        heart.className = 'heart';
+        heart.textContent = '❤';
+        heart.style.left = Math.random() * 100 + '%';
+        heart.style.bottom = '0';
+        heart.style.fontSize = (Math.random() * 12 + 14) + 'px';
+        document.querySelector('.card').appendChild(heart);
+        setTimeout(() => heart.remove(), 6000);
+    }
+
+    setInterval(createHeart, 1200);
+
+    function createDecor() {
+        const icons = ['✨', '🌸', '⭐', '🎀', '🌟'];
+        const deco = document.createElement('div');
+        deco.className = ['star', 'flower', 'spark'][Math.floor(Math.random() * 3)];
+        deco.textContent = icons[Math.floor(Math.random() * icons.length)];
+        deco.style.left = Math.random() * 100 + '%';
+        deco.style.bottom = '0';
+        deco.style.fontSize = (Math.random() * 14 + 16) + 'px';
+        document.querySelector('.stage').appendChild(deco);
+        setTimeout(() => deco.remove(), 8000);
+    }
+
+    setInterval(createDecor, 1500);
+</script>
+</body>
+</html>
