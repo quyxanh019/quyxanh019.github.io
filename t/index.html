@@ -2,7 +2,7 @@
 <html lang="vi">
 <head>
     <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"/>
     <title>Chúc mừng sinh nhật!</title>
     <style>
         :root {
@@ -21,54 +21,63 @@
         }
 
         html, body {
-            height: 100%
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
         }
 
         body {
-            margin: 0;
             background: linear-gradient(135deg, var(--bg1), var(--bg2));
             display: flex;
-            align-items: center;
             justify-content: center;
-            padding: 24px;
+            align-items: flex-start;
             color: #222;
+            padding: 12px;
         }
 
         .stage {
-            width: min(980px, 96%);
-            background: linear-gradient(180deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.06));
-            border-radius: 24px;
-            padding: 40px;
+            width: 100%;
+            max-width: 500px;
+            min-height: 100vh;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.08));
+            border-radius: 20px;
+            padding: 24px;
             box-shadow: var(--shadow);
             position: relative;
             overflow: hidden;
             backdrop-filter: blur(6px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         header {
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
         }
 
         h1 {
             margin: 0;
-            font-size: 36px;
-            letter-spacing: 0.6px;
+            font-size: 26px;
+            letter-spacing: 0.5px;
             color: #222;
             text-shadow: 0 2px 6px rgba(255, 255, 255, 0.6)
         }
 
         p.lead {
-            margin: 10px 0 0;
+            margin: 8px 0 0;
+            font-size: 16px;
             color: #333;
-            opacity: 0.9;
-            font-size: 20px
+            opacity: 0.9
         }
 
         .controls {
-            margin-top: 20px;
+            margin-top: 16px;
             display: flex;
-            gap: 12px;
+            gap: 8px;
             flex-wrap: wrap;
             justify-content: center
         }
@@ -76,12 +85,12 @@
         .btn {
             background: var(--card);
             border: none;
-            padding: 12px 18px;
-            border-radius: 14px;
+            padding: 10px 14px;
+            border-radius: 12px;
             cursor: pointer;
-            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
             font-weight: 600;
-            font-size: 16px;
+            font-size: 14px;
             color: #333
         }
 
@@ -92,39 +101,40 @@
 
         main {
             display: flex;
-            justify-content: center
+            justify-content: center;
+            width: 100%
         }
 
         .card {
             background: var(--glass);
-            padding: 32px 24px;
+            padding: 24px 16px;
             border-radius: 16px;
-            max-width: 620px;
+            width: 100%;
             text-align: center;
             position: relative;
             overflow: hidden
         }
 
         .message {
-            font-size: 20px;
+            font-size: 16px;
             color: #222;
-            line-height: 1.6;
-            margin-bottom: 20px
+            line-height: 1.5;
+            margin-bottom: 16px
         }
 
         .big {
-            font-size: 40px;
-            font-weight: 800;
-            margin: 14px 0;
+            font-size: 28px;
+            font-weight: 700;
+            margin: 10px 0;
             color: #111
         }
 
         .balloons {
             position: absolute;
-            left: -80px;
+            left: -60px;
             top: 0;
-            width: 300px;
-            height: 340px;
+            width: 200px;
+            height: 240px;
             pointer-events: none
         }
 
@@ -151,28 +161,28 @@
         }
 
         .b1 {
-            width: 82px;
-            height: 110px;
+            width: 60px;
+            height: 80px;
             background: linear-gradient(180deg, #ffd1dc, #ff9aa8);
-            left: 16px;
-            top: 30px
+            left: 8px;
+            top: 10px
         }
 
         .b2 {
-            width: 62px;
-            height: 86px;
+            width: 46px;
+            height: 64px;
             background: linear-gradient(180deg, #c9f0ff, #9be7ff);
-            left: 60px;
-            top: 120px;
+            left: 40px;
+            top: 70px;
             animation-duration: 5s
         }
 
         .b3 {
-            width: 46px;
-            height: 68px;
+            width: 34px;
+            height: 50px;
             background: linear-gradient(180deg, #fff1b6, #ffd86b);
-            left: 6px;
-            top: 200px;
+            left: 2px;
+            top: 120px;
             animation-duration: 4.2s
         }
 
@@ -184,16 +194,16 @@
 
         .gift-area {
             display: flex;
-            gap: 14px;
+            gap: 10px;
             align-items: center;
             justify-content: center;
-            margin-top: 20px
+            margin-top: 16px
         }
 
         .gift {
-            width: 220px;
+            width: 160px;
             cursor: pointer;
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease
         }
 
         .gift:hover {
@@ -207,10 +217,10 @@
 
         .hidden-message {
             display: none;
-            margin-top: 20px;
-            font-size: 22px;
+            margin-top: 16px;
+            font-size: 18px;
             color: #222;
-            animation: fadeIn 1s ease forwards;
+            animation: fadeIn 1s ease forwards
         }
 
         @keyframes fadeIn {
@@ -225,22 +235,22 @@
         }
 
         footer {
-            margin-top: 30px;
+            margin-top: 20px;
             display: flex;
             justify-content: flex-end;
             align-items: center;
             color: #333;
             opacity: 0.9;
-            font-size: 14px;
+            font-size: 12px;
             text-align: right
         }
 
         .heart {
             position: absolute;
             color: #ff6f91;
-            font-size: 18px;
+            font-size: 14px;
             animation: fly 6s linear infinite;
-            opacity: 0.8;
+            opacity: 0.8
         }
 
         @keyframes fly {
@@ -256,9 +266,9 @@
 
         .star, .flower, .spark {
             position: absolute;
-            font-size: 18px;
+            font-size: 14px;
             opacity: 0.8;
-            animation: floatUp 8s linear infinite;
+            animation: floatUp 8s linear infinite
         }
 
         @keyframes floatUp {
@@ -269,16 +279,6 @@
             100% {
                 transform: translateY(-700%) scale(1.4);
                 opacity: 0
-            }
-        }
-
-        @media (max-width: 720px) {
-            .balloons {
-                display: none
-            }
-
-            .card {
-                padding: 20px
             }
         }
     </style>
@@ -304,9 +304,9 @@
     <main>
         <div class="card">
             <div class="message">
-                <div class="big" id="headline">Mừng sinh nhật lần thứ <span id="age">16</span>!</div>
-                <div id="text">Tuổi 16 lần thứ n luôn hạnh phúc, xinh đẹp và đạt được mọi điều mong ước.<br/><br/>Hãy
-                    tận hưởng ngày đặc biệt này với thật nhiều niềm vui và bất ngờ dễ thương! 💖
+                <div class="big" id="headline">Mừng sinh nhật lần thứ <span id="age">9</span>!</div>
+                <div id="text">Chúc em luôn hạnh phúc, xinh đẹp và đạt được mọi điều mong ước.<br/><br/>Hãy tận hưởng
+                    ngày đặc biệt này với thật nhiều niềm vui và bất ngờ dễ thương! 💖
                 </div>
             </div>
             <div class="gift-area" id="giftCard">
@@ -348,11 +348,14 @@
 
     function makeParticle() {
         return {
-            x: rand(0, W), y: -10,
-            vx: rand(-1.5, 1.5), vy: rand(1, 4),
+            x: rand(0, W),
+            y: -10,
+            vx: rand(-1.5, 1.5),
+            vy: rand(1, 4),
             r: Math.floor(rand(5, 10)),
             color: ['#ffd1dc', '#ff9aa8', '#c9f0ff', '#fff1b6', '#b6ffde'][Math.floor(Math.random() * 5)],
-            rot: rand(0, Math.PI * 2), vr: rand(-0.08, 0.08)
+            rot: rand(0, Math.PI * 2),
+            vr: rand(-0.08, 0.08)
         }
     }
 
@@ -371,9 +374,9 @@
             ctx.fillStyle = p.color;
             ctx.fillRect(-p.r / 2, -p.r / 2, p.r, p.r * 1.6);
             ctx.restore();
-            if (p.y > H + 30 || p.x < -50 || p.x > W + 50) particles.splice(i, 1);
+            if (p.y > H + 30 || p.x < -50 || p.x > W + 50) particles.splice(i, 1)
         }
-        requestAnimationFrame(update);
+        requestAnimationFrame(update)
     }
 
     update();
@@ -386,7 +389,7 @@
     function openGift() {
         giftImage.src = "resource/gift-blue-open.png";
         hiddenMsg.style.display = 'block';
-        for (let i = 0; i < 60; i++) particles.push(makeParticle());
+        for (let i = 0; i < 60; i++) particles.push(makeParticle())
     }
 
     giftBtn.addEventListener('click', openGift);
@@ -416,7 +419,7 @@
         heart.style.bottom = '0';
         heart.style.fontSize = (Math.random() * 12 + 14) + 'px';
         document.querySelector('.card').appendChild(heart);
-        setTimeout(() => heart.remove(), 6000);
+        setTimeout(() => heart.remove(), 6000)
     }
 
     setInterval(createHeart, 1200);
@@ -430,7 +433,7 @@
         deco.style.bottom = '0';
         deco.style.fontSize = (Math.random() * 14 + 16) + 'px';
         document.querySelector('.stage').appendChild(deco);
-        setTimeout(() => deco.remove(), 8000);
+        setTimeout(() => deco.remove(), 8000)
     }
 
     setInterval(createDecor, 1500);
