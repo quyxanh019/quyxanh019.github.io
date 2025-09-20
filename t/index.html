@@ -13,6 +13,9 @@
             --glass: rgba(255, 255, 255, 0.15);
             --shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
             --radius: 18px;
+            --text-primary: #5a2a47;
+            --text-secondary: #7a3c5f;
+            --text-accent: #9c466c;
             font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
         }
 
@@ -33,18 +36,19 @@
             background: linear-gradient(135deg, var(--bg1), var(--bg2));
             display: flex;
             justify-content: center;
-            align-items: flex-start;
-            color: #222;
-            padding: 12px;
+            align-items: center;
+            color: var(--text-primary);
+            padding: 20px;
+            min-height: 100vh;
         }
 
         .stage {
             width: 100%;
-            max-width: 500px;
-            min-height: 100vh;
+            max-width: 800px;
+            min-height: auto;
             background: linear-gradient(180deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.08));
-            border-radius: 20px;
-            padding: 24px;
+            border-radius: 24px;
+            padding: 32px;
             box-shadow: var(--shadow);
             position: relative;
             overflow: hidden;
@@ -52,81 +56,100 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            z-index: 1;
         }
 
         header {
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 24px;
+            width: 100%;
+            position: relative;
+            z-index: 10;
         }
 
         h1 {
             margin: 0;
-            font-size: 26px;
+            font-size: 32px;
             letter-spacing: 0.5px;
-            color: #222;
-            text-shadow: 0 2px 6px rgba(255, 255, 255, 0.6)
+            color: var(--text-accent);
+            text-shadow: 0 2px 8px rgba(255, 255, 255, 0.8);
+            line-height: 1.2;
+            word-wrap: break-word;
+            font-weight: 700;
         }
 
         p.lead {
-            margin: 8px 0 0;
-            font-size: 16px;
-            color: #333;
-            opacity: 0.9
+            margin: 12px 0 0;
+            font-size: 18px;
+            color: var(--text-secondary);
+            opacity: 0.95;
+            line-height: 1.4;
+            font-weight: 500;
         }
 
         .controls {
-            margin-top: 16px;
+            margin-top: 20px;
             display: flex;
-            gap: 8px;
+            gap: 12px;
             flex-wrap: wrap;
-            justify-content: center
+            justify-content: center;
         }
 
         .btn {
             background: var(--card);
             border: none;
-            padding: 10px 14px;
-            border-radius: 12px;
+            padding: 12px 18px;
+            border-radius: 14px;
             cursor: pointer;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
             font-weight: 600;
-            font-size: 14px;
-            color: #333
+            font-size: 16px;
+            color: var(--text-primary);
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
         }
 
         .btn.primary {
             background: linear-gradient(90deg, #ff9aa8, #ff6f91);
-            color: white
+            color: white;
         }
 
         main {
             display: flex;
             justify-content: center;
-            width: 100%
+            width: 100%;
+            position: relative;
+            z-index: 5;
         }
 
         .card {
             background: var(--glass);
-            padding: 24px 16px;
-            border-radius: 16px;
+            padding: 28px 20px;
+            border-radius: 20px;
             width: 100%;
             text-align: center;
             position: relative;
-            overflow: hidden
+            overflow: hidden;
         }
 
         .message {
-            font-size: 16px;
-            color: #222;
-            line-height: 1.5;
-            margin-bottom: 16px
+            font-size: 18px;
+            color: var(--text-primary);
+            line-height: 1.6;
+            margin-bottom: 20px;
         }
 
         .big {
-            font-size: 28px;
+            font-size: 36px;
             font-weight: 700;
-            margin: 10px 0;
-            color: #111
+            margin: 16px 0;
+            color: var(--text-accent);
+            line-height: 1.2;
+            text-shadow: 0 2px 4px rgba(255, 255, 255, 0.5);
         }
 
         .balloons {
@@ -135,13 +158,14 @@
             top: 0;
             width: 200px;
             height: 240px;
-            pointer-events: none
+            pointer-events: none;
+            z-index: 2;
         }
 
         .balloon {
             position: absolute;
             border-radius: 50%;
-            opacity: 0.95
+            opacity: 0.85;
         }
 
         @keyframes floaty {
@@ -157,7 +181,7 @@
         }
 
         .balloon {
-            animation: floaty 4s ease-in-out infinite
+            animation: floaty 4s ease-in-out infinite;
         }
 
         .b1 {
@@ -165,7 +189,7 @@
             height: 80px;
             background: linear-gradient(180deg, #ffd1dc, #ff9aa8);
             left: 8px;
-            top: 10px
+            top: 10px;
         }
 
         .b2 {
@@ -174,7 +198,7 @@
             background: linear-gradient(180deg, #c9f0ff, #9be7ff);
             left: 40px;
             top: 70px;
-            animation-duration: 5s
+            animation-duration: 5s;
         }
 
         .b3 {
@@ -183,102 +207,306 @@
             background: linear-gradient(180deg, #fff1b6, #ffd86b);
             left: 2px;
             top: 120px;
-            animation-duration: 4.2s
+            animation-duration: 4.2s;
         }
 
         canvas#confetti {
             position: absolute;
             inset: 0;
-            pointer-events: none
+            pointer-events: none;
+            z-index: 1;
         }
 
         .gift-area {
             display: flex;
-            gap: 10px;
+            gap: 12px;
             align-items: center;
             justify-content: center;
-            margin-top: 16px
+            margin-top: 20px;
         }
 
         .gift {
-            width: 160px;
+            width: 180px;
             cursor: pointer;
-            transition: transform 0.3s ease
+            transition: transform 0.3s ease;
         }
 
         .gift:hover {
-            transform: scale(1.08)
+            transform: scale(1.1) rotate(5deg);
         }
 
         .gift img {
             width: 100%;
-            display: block
+            display: block;
+            border-radius: 10px;
         }
 
         .hidden-message {
             display: none;
-            margin-top: 16px;
-            font-size: 18px;
-            color: #222;
-            animation: fadeIn 1s ease forwards
+            margin-top: 20px;
+            font-size: 20px;
+            color: var(--text-accent);
+            animation: fadeIn 1s ease forwards;
+            padding: 16px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 12px;
+            line-height: 1.5;
+            font-weight: 500;
+            border: 1px solid rgba(255, 255, 255, 0.5);
         }
 
         @keyframes fadeIn {
             from {
                 opacity: 0;
-                transform: translateY(10px)
+                transform: translateY(10px);
             }
             to {
                 opacity: 1;
-                transform: translateY(0)
+                transform: translateY(0);
             }
         }
 
         footer {
-            margin-top: 20px;
+            margin-top: 24px;
             display: flex;
             justify-content: flex-end;
             align-items: center;
-            color: #333;
+            color: var(--text-secondary);
             opacity: 0.9;
-            font-size: 12px;
-            text-align: right
+            font-size: 14px;
+            text-align: right;
+            width: 100%;
         }
 
         .heart {
             position: absolute;
             color: #ff6f91;
-            font-size: 14px;
+            font-size: 16px;
             animation: fly 6s linear infinite;
-            opacity: 0.8
+            opacity: 0.8;
+            z-index: 8;
         }
 
         @keyframes fly {
             0% {
                 transform: translateY(100%) scale(0.8);
-                opacity: 0.8
+                opacity: 0.8;
             }
             100% {
                 transform: translateY(-600%) scale(1.4);
-                opacity: 0
+                opacity: 0;
             }
         }
 
         .star, .flower, .spark {
             position: absolute;
-            font-size: 14px;
+            font-size: 16px;
             opacity: 0.8;
-            animation: floatUp 8s linear infinite
+            animation: floatUp 8s linear infinite;
+            z-index: 8;
         }
 
         @keyframes floatUp {
             0% {
                 transform: translateY(0) scale(0.8);
-                opacity: 0.9
+                opacity: 0.9;
             }
             100% {
                 transform: translateY(-700%) scale(1.4);
-                opacity: 0
+                opacity: 0;
+            }
+        }
+
+        /* Media queries cho responsive */
+        @media (max-width: 768px) {
+            body {
+                padding: 12px;
+                align-items: flex-start;
+            }
+
+            .stage {
+                padding: 20px 16px;
+                max-width: 100%;
+                min-height: auto;
+                border-radius: 20px;
+            }
+
+            h1 {
+                font-size: 24px;
+                padding: 0 8px;
+            }
+
+            p.lead {
+                font-size: 16px;
+                padding: 0 8px;
+            }
+
+            .big {
+                font-size: 28px;
+            }
+
+            .message {
+                font-size: 16px;
+            }
+
+            .gift {
+                width: 160px;
+            }
+
+            .hidden-message {
+                font-size: 18px;
+                padding: 14px;
+            }
+
+            .btn {
+                padding: 10px 16px;
+                font-size: 15px;
+            }
+
+            .controls {
+                margin-top: 16px;
+            }
+
+            header {
+                margin-bottom: 16px;
+            }
+
+            .balloons {
+                display: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .stage {
+                padding: 16px 12px;
+                border-radius: 16px;
+            }
+
+            h1 {
+                font-size: 22px;
+            }
+
+            .big {
+                font-size: 24px;
+            }
+
+            .gift {
+                width: 140px;
+            }
+
+            .hidden-message {
+                font-size: 16px;
+                padding: 12px;
+            }
+
+            .controls {
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 250px;
+            }
+        }
+
+        /* Hiệu ứng cho desktop */
+        @media (min-width: 769px) {
+            .balloons {
+                left: 20px;
+                z-index: 2;
+            }
+
+            .card {
+                padding: 32px 24px;
+            }
+
+            .gift-area {
+                margin-top: 28px;
+            }
+
+            /* Thêm bong bóng ở phía bên phải cho desktop */
+            .balloons::after {
+                content: '';
+                position: absolute;
+                right: -160px;
+                top: 0;
+                width: 200px;
+                height: 240px;
+                pointer-events: none;
+            }
+
+            .b4 {
+                width: 60px;
+                height: 80px;
+                background: linear-gradient(180deg, #b6ffde, #85e8b6);
+                right: 8px;
+                top: 20px;
+                position: absolute;
+                border-radius: 50%;
+                opacity: 0.85;
+                animation: floaty 4.5s ease-in-out infinite;
+                z-index: 2;
+            }
+
+            .b5 {
+                width: 46px;
+                height: 64px;
+                background: linear-gradient(180deg, #d9c2ff, #b28aff);
+                right: 40px;
+                top: 80px;
+                position: absolute;
+                border-radius: 50%;
+                opacity: 0.85;
+                animation: floaty 5.2s ease-in-out infinite;
+                animation-delay: 0.5s;
+                z-index: 2;
+            }
+
+            .b6 {
+                width: 34px;
+                height: 50px;
+                background: linear-gradient(180deg, #ffccf2, #ff85d6);
+                right: 2px;
+                top: 140px;
+                position: absolute;
+                border-radius: 50%;
+                opacity: 0.85;
+                animation: floaty 4.8s ease-in-out infinite;
+                animation-delay: 0.3s;
+                z-index: 2;
+            }
+        }
+
+        /* Đảm bảo không bị cắt trên mọi thiết bị */
+        @media (max-height: 700px) and (max-width: 768px) {
+            body {
+                align-items: flex-start;
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+
+            .stage {
+                overflow-y: auto;
+                max-height: 100%;
+            }
+
+            h1 {
+                font-size: 22px;
+            }
+
+            .big {
+                font-size: 24px;
+                margin: 12px 0;
+            }
+
+            .message {
+                margin-bottom: 16px;
+            }
+
+            .gift-area {
+                margin-top: 16px;
             }
         }
     </style>
@@ -290,6 +518,9 @@
         <div class="balloon b1"></div>
         <div class="balloon b2"></div>
         <div class="balloon b3"></div>
+        <div class="balloon b4"></div>
+        <div class="balloon b5"></div>
+        <div class="balloon b6"></div>
     </div>
 
     <header>
@@ -304,8 +535,9 @@
     <main>
         <div class="card">
             <div class="message">
-                <div class="big" id="headline">Mừng sinh nhật lần thứ <span id="age">9</span>!</div>
-                <div id="text">Chúc em luôn hạnh phúc, xinh đẹp và đạt được mọi điều mong ước.<br/><br/>Hãy tận hưởng
+                <div class="big" id="headline">Mừng sinh nhật lần thứ <span id="age">16</span>!</div>
+                <div id="text">Tuổi 16 lần thứ n luôn hạnh phúc, xinh đẹp và đạt được mọi điều mong ước nhé.<br/><br/>Hãy
+                    tận hưởng
                     ngày đặc biệt này với thật nhiều niềm vui và bất ngờ dễ thương! 💖
                 </div>
             </div>
@@ -325,7 +557,7 @@
     </footer>
 </div>
 
-<audio id="bgm" loop autoplay>
+<audio id="bgm" loop>
     <source src="resource/hpbd.mp3" type="audio/mpeg">
 </audio>
 
@@ -336,14 +568,14 @@
 
     function resize() {
         W = canvas.width = window.innerWidth;
-        H = canvas.height = window.innerHeight
+        H = canvas.height = window.innerHeight;
     }
 
     window.addEventListener('resize', resize);
     resize();
 
     function rand(min, max) {
-        return Math.random() * (max - min) + min
+        return Math.random() * (max - min) + min;
     }
 
     function makeParticle() {
@@ -356,7 +588,7 @@
             color: ['#ffd1dc', '#ff9aa8', '#c9f0ff', '#fff1b6', '#b6ffde'][Math.floor(Math.random() * 5)],
             rot: rand(0, Math.PI * 2),
             vr: rand(-0.08, 0.08)
-        }
+        };
     }
 
     function update() {
@@ -374,9 +606,9 @@
             ctx.fillStyle = p.color;
             ctx.fillRect(-p.r / 2, -p.r / 2, p.r, p.r * 1.6);
             ctx.restore();
-            if (p.y > H + 30 || p.x < -50 || p.x > W + 50) particles.splice(i, 1)
+            if (p.y > H + 30 || p.x < -50 || p.x > W + 50) particles.splice(i, 1);
         }
-        requestAnimationFrame(update)
+        requestAnimationFrame(update);
     }
 
     update();
@@ -389,7 +621,18 @@
     function openGift() {
         giftImage.src = "resource/gift-blue-open.png";
         hiddenMsg.style.display = 'block';
-        for (let i = 0; i < 60; i++) particles.push(makeParticle())
+        giftBtn.textContent = "Quà đã mở!";
+        // giftBtn.disabled = true;
+
+        // Tăng số lượng confetti khi mở quà
+        for (let i = 0; i < 120; i++) particles.push(makeParticle());
+
+        // Hiệu ứng cho desktop - thêm trái tim bay
+        if (window.innerWidth > 768) {
+            for (let i = 0; i < 30; i++) {
+                setTimeout(createHeart, i * 100);
+            }
+        }
     }
 
     giftBtn.addEventListener('click', openGift);
@@ -397,13 +640,24 @@
 
     const bgm = document.getElementById('bgm');
     const tgl = document.getElementById('toggleMusic');
+
+    // Tự động phát nhạc trên desktop (với điều kiện người dùng đã tương tác)
+    // if (window.innerWidth > 768) {
+    document.body.addEventListener('click', function () {
+        if (bgm.paused) {
+            bgm.play().catch(e => console.log("Autoplay prevented: ", e));
+            tgl.textContent = '⏸ Tắt nhạc';
+        }
+    }, {once: true});
+    // }
+
     tgl.addEventListener('click', () => {
         if (bgm.paused) {
             bgm.play();
-            tgl.textContent = '⏸ Tắt nhạc'
+            tgl.textContent = '⏸ Tắt nhạc';
         } else {
             bgm.pause();
-            tgl.textContent = '▶ Bật nhạc'
+            tgl.textContent = '▶ Bật nhạc';
         }
     });
 
@@ -417,9 +671,10 @@
         heart.textContent = '❤';
         heart.style.left = Math.random() * 100 + '%';
         heart.style.bottom = '0';
-        heart.style.fontSize = (Math.random() * 12 + 14) + 'px';
+        heart.style.fontSize = (Math.random() * 16 + 18) + 'px';
+        heart.style.animationDuration = (Math.random() * 3 + 5) + 's';
         document.querySelector('.card').appendChild(heart);
-        setTimeout(() => heart.remove(), 6000)
+        setTimeout(() => heart.remove(), 6000);
     }
 
     setInterval(createHeart, 1200);
@@ -431,12 +686,42 @@
         deco.textContent = icons[Math.floor(Math.random() * icons.length)];
         deco.style.left = Math.random() * 100 + '%';
         deco.style.bottom = '0';
-        deco.style.fontSize = (Math.random() * 14 + 16) + 'px';
+        deco.style.fontSize = (Math.random() * 16 + 18) + 'px';
+        deco.style.animationDuration = (Math.random() * 4 + 7) + 's';
         document.querySelector('.stage').appendChild(deco);
-        setTimeout(() => deco.remove(), 8000)
+        setTimeout(() => deco.remove(), 8000);
     }
 
     setInterval(createDecor, 1500);
+
+    // Thêm hiệu ứng khi di chuột vào stage (desktop only)
+    if (window.innerWidth > 768) {
+        const stage = document.getElementById('stage');
+        stage.addEventListener('mousemove', (e) => {
+            const x = e.clientX / window.innerWidth;
+            const y = e.clientY / window.innerHeight;
+
+            // Hiệu ứng parallax nhẹ cho background
+            stage.style.background = `linear-gradient(${135 + x * 10}deg, var(--bg1), var(--bg2))`;
+        });
+    }
+
+    // Đảm bảo nội dung không bị cắt trên mobile
+    function checkOverflow() {
+        if (window.innerWidth < 768) {
+            const header = document.querySelector('header');
+            const headerRect = header.getBoundingClientRect();
+            const stageRect = document.getElementById('stage').getBoundingClientRect();
+
+            if (headerRect.top < stageRect.top) {
+                document.body.style.alignItems = 'flex-start';
+                document.body.style.paddingTop = '10px';
+            }
+        }
+    }
+
+    window.addEventListener('load', checkOverflow);
+    window.addEventListener('resize', checkOverflow);
 </script>
 </body>
 </html>
